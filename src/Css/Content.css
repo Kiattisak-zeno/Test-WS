@@ -1,0 +1,33 @@
+@media only screen and (max-width: 320px) {
+  
+    .RowPersonal h6{
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (min-width: 320px) {
+    .RowPersonal{
+        padding-bottom: 20px;
+        margin-left:5%;
+       
+    }
+}
+
+
+.H-PERSONAL{
+    padding-bottom: 20px;
+    margin-left:5%;
+    padding-top: 40px;
+}
+
+
+.ColorIcon{
+    color:#4ab0e4 ;   
+    padding-top: 40px; 
+    text-align: right;
+}
+
+h5{
+    padding-top: 50px;
+}

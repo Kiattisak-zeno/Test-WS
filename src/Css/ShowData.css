@@ -1,0 +1,20 @@
+
+.DivSuject ul{
+    list-style-type:none;    
+    padding: 0px;
+}
+
+.DivSuject li{
+    background-image: linear-gradient(to right, #008FD9,#008FD9);
+    color: rgb(255, 255, 255);
+    margin: 7px;
+    padding: 25px;
+    font-size: 17px;
+   
+    /* box-shadow: 1px 4px 4px #454545; */
+    border: solid 0px black;
+}
+.DivSuject li:hover{
+    cursor: pointer;
+    transform: scale(1.02);   
+}

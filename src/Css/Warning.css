@@ -1,0 +1,15 @@
+.modal-header{
+    border-bottom: 0px !important;
+}
+
+.modal-content  img{
+    width: 80px;
+    margin: 0px 0px 30px 20px;    
+}
+
+.modal-content h3{
+    font-size: 15px;
+    font-weight: 600;
+    margin: 20px 0px 40px 0px;    
+  
+}
