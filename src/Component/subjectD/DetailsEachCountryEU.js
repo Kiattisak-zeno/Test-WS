@@ -24,9 +24,33 @@ const Details_each_country = (props) => {
     });
   };
 
-  useEffect(() => {
-    setTag(getData());
+  const getDataEU = () => {
+    No = 0;
+    let num = 1;
+    return Data.map((keys, index) => {
+      //console.log(List_Country_EU);
 
+      return List_Country_EU.map((keysEU, indexEU) => {
+        if (keys[0].toUpperCase() === keysEU.toUpperCase()) {
+          No += keys[1].length;
+          return (
+            <tr key={uuidv4()}>
+              <td style={{ paddingLeft: "20px" }}>{num++}</td>
+              <td style={{ paddingLeft: "20px" }}>{keys[0].toUpperCase()}</td>
+              <td style={{ paddingLeft: "20px" }}>{keys[1].length}</td>
+            </tr>
+          );
+        }
+      });
+    });
+  };
+
+  useEffect(() => {
+    if (props.Country === "EUROPE") {
+      setTag(getDataEU());
+    } else {
+      setTag(getData());
+    }
     setCounts(No);
   }, [setTag]);
 

@@ -8,10 +8,12 @@ import Headder from "../Component/Headder";
 import { useUserContext } from "../Data/UserContext";
 import axios from "axios";
 import { URL_GITHUP } from "../Data/Url";
-import Detail from "../Component/subjectBCD/Detail";
+import Detail from "../Component/subjectBC/Detail";
 import { v4 as uuidv4 } from "uuid";
 import "../Css/ShowData.css";
 import DetailsEachCountry from "../Component/subjectA/DetailsEachCountry";
+import DetailsEachCountryEU from "../Component/subjectD/DetailsEachCountryEU";
+import DetailEU from "../Component/subjectD/DetailEU";
 const ShowData = () => {
   const initialData = {
     items: [],
@@ -50,7 +52,7 @@ const ShowData = () => {
     setData(result); /// Set ที่กรอกเเล้ว
   };
 
-  const GetDetail_AD = (Country) => {
+  const GetDetail_A = (Country) => {
     let dataTag = (
       <DetailsEachCountry key={uuidv4()} value={Data} Country={Country} />
     );
@@ -67,6 +69,11 @@ const ShowData = () => {
     setHTMLTag(dataTag);
   };
 
+  const GetDetail_D = (Country) => {
+    let dataTag = <DetailEU key={uuidv4()} value={Data} Country={Country} />;
+    setHTMLTag(dataTag);
+  };
+
   return (
     <>
       <Headder />
@@ -75,7 +82,7 @@ const ShowData = () => {
           <Col lg={3}>
             <div style={{ marginTop: "30px" }} className="DivSuject">
               <ul>
-                <li onClick={() => GetDetail_AD()}>
+                <li onClick={() => GetDetail_A()}>
                   a. แต่ละประเทศผลิตรถกี่ยี่ห้อ
                 </li>
                 <li onClick={() => GetDetail_B()}>
@@ -84,7 +91,7 @@ const ShowData = () => {
                 <li onClick={() => GetDetail_C("USA")}>
                   c. USA ผลิตรถกี่ยี่ห้อ ยี่ห้ออะไรบ้าง
                 </li>
-                <li onClick={() => GetDetail_AD("EUROPE")}>
+                <li onClick={() => GetDetail_D("AUSTRIA")}>
                   d. รถยุโรป มีกี่ยี่ห้อ ยี่ห้ออะไรบ้าง
                 </li>
               </ul>
