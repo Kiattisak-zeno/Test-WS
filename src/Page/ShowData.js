@@ -37,7 +37,7 @@ const ShowData = () => {
       .catch((error) => {
         console.log(error);
       });
-    !userStatus && history("/Login");
+    // !userStatus && history("/Login");
   }, []);
 
   const SetDataApi = (Datas) => {
@@ -50,8 +50,10 @@ const ShowData = () => {
     setData(result); /// Set ที่กรอกเเล้ว
   };
 
-  const GetDetail_A = (Country) => {
-    let dataTag = <DetailsEachCountry key={uuidv4()} value={Data} />;
+  const GetDetail_AD = (Country) => {
+    let dataTag = (
+      <DetailsEachCountry key={uuidv4()} value={Data} Country={Country} />
+    );
     setHTMLTag(dataTag);
   };
 
@@ -60,7 +62,7 @@ const ShowData = () => {
     setHTMLTag(dataTag);
   };
 
-  const GetDetail_CD = (Country) => {
+  const GetDetail_C = (Country) => {
     let dataTag = <Detail key={uuidv4()} value={Data} Country={Country} />;
     setHTMLTag(dataTag);
   };
@@ -73,16 +75,16 @@ const ShowData = () => {
           <Col lg={3}>
             <div style={{ marginTop: "30px" }} className="DivSuject">
               <ul>
-                <li onClick={() => GetDetail_A()}>
+                <li onClick={() => GetDetail_AD()}>
                   a. แต่ละประเทศผลิตรถกี่ยี่ห้อ
                 </li>
                 <li onClick={() => GetDetail_B()}>
                   b. แต่ละประเทศมีรถยี่ห้ออะไรบ้าง
                 </li>
-                <li onClick={() => GetDetail_CD("USA")}>
+                <li onClick={() => GetDetail_C("USA")}>
                   c. USA ผลิตรถกี่ยี่ห้อ ยี่ห้ออะไรบ้าง
                 </li>
-                <li onClick={() => GetDetail_CD("EUROPE")}>
+                <li onClick={() => GetDetail_AD("EUROPE")}>
                   d. รถยุโรป มีกี่ยี่ห้อ ยี่ห้ออะไรบ้าง
                 </li>
               </ul>

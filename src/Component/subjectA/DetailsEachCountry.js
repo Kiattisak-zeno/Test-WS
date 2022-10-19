@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import "../../Css/Detail.css";
+import { List_Country_EU } from "../../Data/Eu";
 const Details_each_country = (props) => {
   const Data = Object.entries(props.value);
 
@@ -23,8 +24,33 @@ const Details_each_country = (props) => {
     });
   };
 
+  const getDataEU = () => {
+    No = 0;
+    let num = 1;
+    return Data.map((keys, index) => {
+      //console.log(List_Country_EU);
+
+      return List_Country_EU.map((keysEU, indexEU) => {
+        if (keys[0].toUpperCase() === keysEU.toUpperCase()) {
+          No += keys[1].length;
+          return (
+            <tr key={uuidv4()}>
+              <td style={{ paddingLeft: "20px" }}>{num++}</td>
+              <td style={{ paddingLeft: "20px" }}>{keys[0].toUpperCase()}</td>
+              <td style={{ paddingLeft: "20px" }}>{keys[1].length}</td>
+            </tr>
+          );
+        }
+      });
+    });
+  };
+
   useEffect(() => {
-    setTag(getData());
+    if (props.Country === "EUROPE") {
+      setTag(getDataEU());
+    } else {
+      setTag(getData());
+    }
     setCounts(No);
   }, [setTag]);
 
