@@ -37,7 +37,7 @@ const ShowData = () => {
       .catch((error) => {
         console.log(error);
       });
-    // !userStatus && history("/Login");
+    !userStatus && history("/Login");
   }, []);
 
   const SetDataApi = (Datas) => {
